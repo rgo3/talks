@@ -1,0 +1,131 @@
+Hello Go
+25. April 2018
+
+Robin Gögge
+Working Student, Webtrekk, TU Berlin
+rgoegge@gmail.com
+@_rgo3_
+
+* Introduction
+
+- Working Student at Webtrekk: WARP team.
+- Go programmer for ~6 months.
+- Interested in systems programming, distributed systems, operating systems.
+
+* What to expect!
+
+- What is Go?
+- Hello Webtrekk
+- Variables, functions and loops
+- Slices vs. Arrays
+- Interfaces, structs and methods
+- Standard library
+- Concurrency
+- Let's give Go a try!
+
+: Any questions about the agenda?
+
+* What is Go?
+
+"Go is an open source programming language that makes it easy to build simple,
+reliable, and efficient software."
+.link https://golang.org
+
+- The rumor is that Go was conceived during one of these long C++ build times at Google.
+
+- Emphasis on performance, simplicity and readability.
+
+- Excellent tools like gofmt, golint, and go vet, that put an end to stylistic debates.
+
+- Concurrency primitives are baked into the language.
+
+- Statically linked binaries. Build, scp, run. Small Docker images.
+
+- Easy cross compilation for modern architectures.
+
+* Hello Webtrekk
+
+- Go is a "C-like" language.
+- Curly braces used to denote blocks.
+- No semicolons!
+
+.play -edit hello-go/1-hello-world/main.go
+
+* Variables
+- Go is statically typed
+- Types must be specified
+- ':=' syntax can be used to infer the type
+- Built in types have zero-values
+
+.play -edit hello-go/2-variables/main.go
+
+* Functions and loops
+
+.play -edit hello-go/3-functions/main.go
+
+: for loops only!
+#
+: Unlimited arguments to functions are possible too. fmt.Printf is the most well known one.
+
+* Slices vs. Arrays
+
+- A slice is essentially a "flexible view" over an array in memory.
+
+.play hello-go/4-collections/main.go
+
+* Interfaces, structs and methods
+
+.play hello-go/5-oop/main.go /START OMIT/,/END OMIT/
+
+* Comprehensive standard library
+
+- Want to build an HTTP server? No problem.
+
+.play hello-go/6-stdlib/main.go
+
+: Any type with a ServeHTTP method and the correct signature can be used
+
+* Concurrency primitives
+
+- Concurrency model is based on Tony Hoare's communicating sequential processes.
+- Goroutines are lightweight "threads". 
+- Channels enable passing messages in a concurrency safe way between goroutines.
+- Channels have a type and are built into Go.
+- Select: a more powerful switch statement.
+- Check out Rob Pike's talk on Concurrency:
+.link https://www.youtube.com/watch?v=cN_DpYBzKso 
+
+: The Go runtime takes care of coordinating goroutines. If an OS thread is
+: blocked on I/O, the runtime can schedule goroutines on other threads.
+
+* Concurrency primitives
+
+.play hello-go/7-concurrency-1/main.go /START OMIT/,/END OMIT/
+
+: Simple concurrency example. For more complex ones we can either have another talk in the future
+: or you can check out some of the great talks on YouTube covering it.
+
+* Concurrency primitives
+
+.code hello-go/7-concurrency-1/main.go /END OMIT/,/END OMIT/
+
+* Concurreny primitives
+
+.play -edit hello-go/8-concurrency-2/main.go
+
+* Let's give Go a try!
+
+- Check out the Tour of Go.
+.link https://tour.golang.org/welcome/1
+
+- Check out the Go proverbs
+.link https://go-proverbs.github.io/
+
+- Go is being used for many large projects, like Kubernetes, Docker, and Prometheus.
+
+- Great open source community and projects.
+
+- Go has a wide range of applicability
+
+- Especially easy to write Webservers and CLI applications
+
